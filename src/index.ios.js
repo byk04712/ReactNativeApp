@@ -5,12 +5,12 @@ import {
       NativeModules,
       NativeAppEventEmitter,
       TouchableHighlight,
+      UIManager,
       Dimensions,
       Text,
       View
 } from 'react-native';
 import MapView from './MapView';
-
 
 
 const { width, height } = Dimensions.get('window');
@@ -87,12 +87,13 @@ class index extends React.Component {
 
 
     render() {
-        // var region = {
-        //     latitude: 37.48,
-        //     longitude: -122.16,
-        //     latitudeDelta: 0.1,
-        //     longitudeDelta: 0.1
-        // };
+        console.log('UIManager', UIManager)
+        var region = {
+            latitude: 37.48,
+            longitude: -122.16,
+            latitudeDelta: 0.1,
+            longitudeDelta: 0.1
+        };
         return (
             <View style={styles.container}>
 
@@ -115,11 +116,22 @@ class index extends React.Component {
                 <MapView
                     style={styles.mapView}
                     pitchEnabled={false}
-                    //region={region}
+                    region={region}
+                    onRegionChange={this.onChange}
                 />
-
             </View>
         );
+    }
+
+
+    onChange = (event: Event) => {
+        console.log('onChange ', event.nativeEvent.region);
+        // region: {
+        //     latitude: 37.47166620156466
+        //     latitudeDelta: 0.1000111518249724
+        //     longitude: -122.1606300675163
+        //     longitudeDelta: 0.1575168790815269
+        // }
     }
 
 

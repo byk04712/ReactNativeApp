@@ -13,7 +13,12 @@ class MapView extends Component {
 
 	render() {
 		console.log('MapView props ', this.props);
-		return <RCTMap {...this.props} />;
+		return (
+			<RCTMap
+				{...this.props}
+				onChange={this.props.onRegionChange}
+			/>
+		);
 	}
 
 
@@ -33,27 +38,52 @@ MapView.propTypes = {
 	 * 地图要显示的区域
 	 * 区域由中心点坐标和区域范围坐标来定义
 	 */
-	// region: PropTypes.shape({
-	// 	/**
-	// 	 * 地图中心点的坐标
-	// 	 */
-	// 	latitude: PropTypes.number.isRequired,
-	// 	longitude: PropTypes.number.isRequired,
-	// 	/**
-	// 	 * 最小/最大经，纬度间的距离
-	// 	 */
-	// 	latitudeDelta: PropTypes.number.isRequired,
-	// 	longitudeDelta: PropTypes.number.isRequired
-	// })
+	region: PropTypes.shape({
+		/**
+		 * 地图中心点的坐标
+		 */
+		latitude: PropTypes.number.isRequired,
+		longitude: PropTypes.number.isRequired,
+		/**
+		 * 最小/最大经，纬度间的距离
+		 */
+		latitudeDelta: PropTypes.number.isRequired,
+		longitudeDelta: PropTypes.number.isRequired
+	}),
+	
+	onRegionChange: PropTypes.func
 	
 };
 
 
 
-var RCTMap = requireNativeComponent('RCTMap', MapView);
+var RCTMap = requireNativeComponent('RCTMap', MapView, {
+	nativeOnly: {
+		onAnnotationDragStateChange: true,
+		followUserLocation: true,
+		annotations: true,
+		rotateEnabled: true,
+		region: true,
+		onPress: true,
+		showsUserLocation: true,
+		minDelta: true,
+		maxDelta: true,
+		overlays: true,
+		scrollEnabled: true,
+		showsCompass: true,
+		mapType: true,
+		legalLabelInsets: true,
+		onChange: true,
+		zoomEnabled: true,
+		onAnnotationBlur: true,
+		showsPointsOfInterest: true,
+		onAnnotationFocus: true
+	}
+});
 
 
 // module.exports = requireNativeComponent('RCTMap', null);
 
 // 导出包装后的组件
 module.exports = MapView;
+
