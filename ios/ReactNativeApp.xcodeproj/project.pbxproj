@@ -24,6 +24,9 @@
 		146834051AC3E58100842450 /* libReact.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 146834041AC3E56700842450 /* libReact.a */; };
 		1A5D83A31D8E983A003A3772 /* CalendarManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A5D83A21D8E983A003A3772 /* CalendarManager.m */; };
 		1A5D83A51D8E9BD1003A3772 /* RCTMapManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A5D83A41D8E9BD1003A3772 /* RCTMapManager.m */; };
+		1A7C4B881D990C660082B042 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A7C4B861D990C660082B042 /* LoginViewController.m */; };
+		1A7C4B891D990C660082B042 /* LoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1A7C4B871D990C660082B042 /* LoginViewController.xib */; };
+		1A7C4B971D9A24D70082B042 /* RootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A7C4B961D9A24D70082B042 /* RootViewController.m */; };
 		832341BD1AAA6AB300B99B32 /* libRCTText.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 832341B51AAA6A8300B99B32 /* libRCTText.a */; };
 /* End PBXBuildFile section */
 
@@ -130,6 +133,11 @@
 		1A5D83A11D8E983A003A3772 /* CalendarManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CalendarManager.h; sourceTree = "<group>"; };
 		1A5D83A21D8E983A003A3772 /* CalendarManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CalendarManager.m; sourceTree = "<group>"; };
 		1A5D83A41D8E9BD1003A3772 /* RCTMapManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RCTMapManager.m; sourceTree = "<group>"; };
+		1A7C4B851D990C660082B042 /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
+		1A7C4B861D990C660082B042 /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
+		1A7C4B871D990C660082B042 /* LoginViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LoginViewController.xib; sourceTree = "<group>"; };
+		1A7C4B951D9A24D70082B042 /* RootViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RootViewController.h; sourceTree = "<group>"; };
+		1A7C4B961D9A24D70082B042 /* RootViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RootViewController.m; sourceTree = "<group>"; };
 		78C398B01ACF4ADC00677621 /* RCTLinking.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RCTLinking.xcodeproj; path = "../node_modules/react-native/Libraries/LinkingIOS/RCTLinking.xcodeproj"; sourceTree = "<group>"; };
 		832341B01AAA6A8300B99B32 /* RCTText.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RCTText.xcodeproj; path = "../node_modules/react-native/Libraries/Text/RCTText.xcodeproj"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -265,6 +273,11 @@
 				1A5D83A11D8E983A003A3772 /* CalendarManager.h */,
 				1A5D83A21D8E983A003A3772 /* CalendarManager.m */,
 				1A5D83A41D8E9BD1003A3772 /* RCTMapManager.m */,
+				1A7C4B851D990C660082B042 /* LoginViewController.h */,
+				1A7C4B861D990C660082B042 /* LoginViewController.m */,
+				1A7C4B871D990C660082B042 /* LoginViewController.xib */,
+				1A7C4B951D9A24D70082B042 /* RootViewController.h */,
+				1A7C4B961D9A24D70082B042 /* RootViewController.m */,
 			);
 			name = native;
 			sourceTree = "<group>";
@@ -525,6 +538,7 @@
 			files = (
 				13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */,
 				13B07FBD1A68108700A75B9A /* LaunchScreen.xib in Resources */,
+				1A7C4B891D990C660082B042 /* LoginViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -564,6 +578,8 @@
 				13B07FBC1A68108700A75B9A /* AppDelegate.m in Sources */,
 				13B07FC11A68108700A75B9A /* main.m in Sources */,
 				1A5D83A31D8E983A003A3772 /* CalendarManager.m in Sources */,
+				1A7C4B881D990C660082B042 /* LoginViewController.m in Sources */,
+				1A7C4B971D9A24D70082B042 /* RootViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

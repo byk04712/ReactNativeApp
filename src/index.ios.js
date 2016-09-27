@@ -80,6 +80,7 @@ class index extends React.Component {
     onFindEventWithPromise = () => {
         NativeModules.CalendarManager.findEvents2().then(result => {
             console.log('resolve', result);
+            alert('调用成功，请在Debug模式下查看，Chrome 控制台输出');
         }, error => {
             console.log('reject', error);
         });
@@ -119,8 +120,19 @@ class index extends React.Component {
                     region={region}
                     onRegionChange={this.onChange}
                 />
+
+                <TouchableHighlight style={styles.btn} onPress={this.goNative}>
+                    <Text style={styles.btnText}>前往原生界面</Text>
+                </TouchableHighlight>
+
             </View>
         );
+    }
+
+
+    goNative = (e) => {
+        // NativeModules.RootViewController.goToNative();
+        NativeModules.AppDelegate.toNative();
     }
 
 
