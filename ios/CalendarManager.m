@@ -36,14 +36,20 @@ RCT_EXPORT_MODULE();
  */
 
 // 发送事件到js
-- (void)calendarEventReminderReceived:(NSNotification *)notification
+RCT_EXPORT_METHOD(VCOpenRN:(NSDictionary *)dictionary)
 {
-  NSString *eventName = notification.userInfo[@"name"];
-  NSLog(@"eventDispatcher %@", eventName);
-  //[self sendEventWithName:@"EventReminder" body:@{ @"name": eventName }];
-  [self.bridge.eventDispatcher sendAppEventWithName:@"EventReminder" body:@{@"name": eventName}];
+  NSLog(@"-------发送事件到js------");
+  NSString *value = [dictionary objectForKey:@"name"];
+  if ([value isEqualToString:@"A"]) {
+    [self.bridge.eventDispatcher sendAppEventWithName:@"EventReminder" body:@{
+         @"name":[NSString stringWithFormat:@"%@",value],
+          @"errorCode":@"0",
+          @"msg":@"成功"
+     }];
+  } else {
+    [self.bridge.eventDispatcher sendAppEventWithName:@"EventReminder" body:@{@"name":[NSString stringWithFormat:@"%@",value],@"errorCode":@"0",@"msg":@"输入的name不是jiangqq"}];
+  }
 }
-
 
 
 // 导出常量

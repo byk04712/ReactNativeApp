@@ -24,8 +24,9 @@ class index extends React.Component {
     componentDidMount() {
         this.subscription = NativeAppEventEmitter.addListener(
             'EventReminder',
-            () => console.log('Objective-c 给 javascript 发送的事件'),
-            () => console.log('context')
+            (reminder) => {
+                console.log('接收到iOS发送的事件', reminder);
+            }
         );
         console.log('componentDidMount this.subscription', this.subscription);
     }
@@ -114,6 +115,10 @@ class index extends React.Component {
                     <Text style={styles.btnText}>调用原生带回调函数方法(Promise)</Text>
                 </TouchableHighlight>
 
+                <TouchableHighlight style={styles.btn} onPress={() => NativeModules.CalendarManager.VCOpenRN({name:'A'})}>
+                    <Text style={styles.btnText}>调用返回事件</Text>
+                </TouchableHighlight>
+
                 <MapView
                     style={styles.mapView}
                     pitchEnabled={false}
@@ -175,7 +180,7 @@ const styles = StyleSheet.create({
     },
     mapView: {
         width,
-        height: 300,
+        height: 200,
         borderWidth: 1,
         borderColor: 'gray'
     }
