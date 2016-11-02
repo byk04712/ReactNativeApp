@@ -38,8 +38,8 @@ RCT_EXPORT_MODULE();
 // 发送事件到js
 RCT_EXPORT_METHOD(VCOpenRN:(NSDictionary *)dictionary)
 {
-  NSLog(@"-------发送事件到js------");
   NSString *value = [dictionary objectForKey:@"name"];
+  NSLog(@"-------发送事件到js------%@", value);
   if ([value isEqualToString:@"A"]) {
     [self.bridge.eventDispatcher sendAppEventWithName:@"EventReminder" body:@{
          @"name":[NSString stringWithFormat:@"%@",value],
@@ -47,7 +47,11 @@ RCT_EXPORT_METHOD(VCOpenRN:(NSDictionary *)dictionary)
           @"msg":@"成功"
      }];
   } else {
-    [self.bridge.eventDispatcher sendAppEventWithName:@"EventReminder" body:@{@"name":[NSString stringWithFormat:@"%@",value],@"errorCode":@"0",@"msg":@"输入的name不是jiangqq"}];
+    [self.bridge.eventDispatcher sendAppEventWithName:@"EventReminder" body:@{
+          @"name":[NSString stringWithFormat:@"%@",value],
+          @"errorCode":@"0",
+          @"msg":@"输入的name不是jiangqq"
+      }];
   }
 }
 
